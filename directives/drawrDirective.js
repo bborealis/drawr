@@ -12,7 +12,7 @@ drawr.directive("draw", function() {
   var lastY;
 
   element.bind('mousedown', function(event){
-    //tracks the x and y coordinates  
+    //tracks the x and y coordinates
     if(event.offsetX!==undefined){
       lastX = event.offsetX;
       lastY = event.offsetY;
@@ -51,6 +51,10 @@ drawr.directive("draw", function() {
     drawing = false;
   });
 
+  var gradient=ctx.createLinearGradient(0,0,170,0);
+  gradient.addColorStop("0","magenta");
+  gradient.addColorStop("0.5","blue");
+  gradient.addColorStop("1.0","red");
   // canvas reset
   function reset(){
    element[0].width = element[0].width;
